@@ -1,49 +1,37 @@
-// year
+// Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// micro-demo interactions
-const result = document.getElementById('resultReadout');
-const toggleBtn = document.getElementById('toggleResult');
-const cycleBtn = document.getElementById('cyclePriority');
-const priorityBadge = document.querySelector('[data-priority]');
-
-let state = 'notrun'; // 'pass' | 'fail'
-let prio = 'high'; // 'high' | 'medium' | 'low'
-
-function renderResult(){
-  result.classList.remove('pass','fail');
-  if(state === 'pass'){
-    result.textContent = 'Result: Pass';
-    result.classList.add('pass');
-  } else if(state === 'fail'){
-    result.textContent = 'Result: Fail';
-    result.classList.add('fail');
-  } else {
-    result.textContent = 'Result: Not run';
-  }
+// Scroll progress bar
+const progressBar = document.getElementById('progressBar');
+function onScroll(){
+  const h = document.documentElement;
+  const scrollTop = h.scrollTop || document.body.scrollTop;
+  const scrollHeight = h.scrollHeight - h.clientHeight;
+  const pct = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+  progressBar.style.width = (pct * 100).toFixed(2) + '%';
 }
+document.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
 
-toggleBtn.addEventListener('click', () => {
-  if(state === 'notrun') state = 'pass';
-  else if(state === 'pass') state = 'fail';
-  else state = 'pass';
-  const pressed = toggleBtn.getAttribute('aria-pressed') === 'true';
-  toggleBtn.setAttribute('aria-pressed', String(!pressed));
-  renderResult();
-});
+// Scroll spy (highlights current era in sticky nav)
+const spyLinks = Array.from(document.querySelectorAll('#scrollspy a'));
+const targets = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const idx = targets.indexOf(entry.target);
+    if (idx >= 0) {
+      spyLinks.forEach(a => a.classList.remove('active'));
+      spyLinks[idx].classList.add('active');
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px', threshold: 0.001 });
+targets.forEach(sec => spyObserver.observe(sec));
 
-function renderPriority(){
-  priorityBadge.classList.remove('high','medium','low');
-  priorityBadge.classList.add(prio);
-  const label = prio.charAt(0).toUpperCase() + prio.slice(1);
-  priorityBadge.textContent = `Priority: ${label}`;
-}
-
-cycleBtn.addEventListener('click', () => {
-  prio = prio === 'high' ? 'medium' : prio === 'medium' ? 'low' : 'high';
-  renderPriority();
-});
-
-// initial paint
-renderResult();
-renderPriority();
+// Reveal animation on enter
+const revealEls = document.querySelectorAll('.era .container');
+revealEls.forEach(el => el.classList.add('reveal'));
+const revObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revObs.observe(el));

@@ -3,121 +3,158 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QTM — QA Demo</title>
-  <meta name="description" content="A tiny, clean demo page explaining core QA concepts with a micro interactive widget." />
+  <title>History of QA — Scroll Timeline</title>
+  <meta name="description" content="A single-page, scroll-snapping history of Quality Assurance from craftsmanship to AI-assisted testing." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Sticky Header -->
   <header class="site-header" role="banner">
-    <nav aria-label="Primary" class="container nav">
-      <a class="brand" href="#">QTM</a>
-      <ul class="nav-list">
-        <li><a href="#qa">QA 101</a></li>
-        <li><a href="#pyramid">Test Pyramid</a></li>
-        <li><a href="#bugs">Bug Lifecycle</a></li>
-        <li><a href="#checklist">Checklist</a></li>
-        <li><a href="#demo">Demo</a></li>
-      </ul>
-    </nav>
+    <div class="container head">
+      <h1 class="brand">History of QA</h1>
+
+      <!-- Progress bar -->
+      <div class="progress" aria-hidden="true">
+        <div class="progress__bar" id="progressBar"></div>
+      </div>
+
+      <!-- Sticky Nav -->
+      <nav aria-label="Timeline navigation">
+        <ul class="nav" id="scrollspy">
+          <li><a href="#era-1">Craftsmanship</a></li>
+          <li><a href="#era-2">Industrial Rev.</a></li>
+          <li><a href="#era-3">Statistical QC</a></li>
+          <li><a href="#era-4">Total Quality</a></li>
+          <li><a href="#era-5">Software QA</a></li>
+          <li><a href="#era-6">Shift Left</a></li>
+          <li><a href="#era-7">Agile & CD</a></li>
+          <li><a href="#era-8">Modern Era</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="main" class="container" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Quality Assurance, Simplified</h1>
-      <p class="lede">
-        QA reduces risk and accelerates delivery by catching issues early, often, and objectively.
-        This micro-site shows core concepts your team should align on.
-      </p>
-      <div class="hero-cta">
-        <a class="btn" href="#demo">Try the micro-demo</a>
-        <a class="btn ghost" href="#checklist">Ship-ready checklist</a>
+  <main id="main" class="snap-container" role="main" tabindex="-1">
+    <!-- Each era is a full-viewport snap section -->
+    <section id="era-hero" class="era hero snap" aria-labelledby="hero-title">
+      <div class="container era__inner">
+        <h2 id="hero-title">Quality as a Journey</h2>
+        <p class="lede">From artisan workshops to AI-assisted testing, QA has evolved from end-of-line checks to a culture of continuous quality.</p>
+        <p class="hint" aria-hidden="true">Scroll ↓</p>
       </div>
     </section>
 
-    <section id="qa" class="card" aria-labelledby="qa-title">
-      <h2 id="qa-title">What is QA?</h2>
-      <p>
-        QA is a systematic process for preventing defects and verifying that software meets user needs.
-        It blends prevention (process, standards) and detection (testing, reviews).
-      </p>
-      <ul class="pill-list" aria-label="QA focus areas">
-        <li class="pill">Functional</li>
-        <li class="pill">UI/UX</li>
-        <li class="pill">Accessibility</li>
-        <li class="pill">Performance</li>
-        <li class="pill">Security (basic)</li>
-      </ul>
-    </section>
-
-    <section id="pyramid" class="grid card" aria-labelledby="pyramid-title">
-      <div>
-        <h2 id="pyramid-title">The Test Pyramid</h2>
-        <p>Balance speed and confidence by emphasizing fast, focused tests at the base.</p>
-        <ul class="list">
-          <li><strong>Unit:</strong> Fast, isolated, verify functions/components.</li>
-          <li><strong>Integration:</strong> Interactions between modules/services.</li>
-          <li><strong>E2E:</strong> User-level flows across the system.</li>
+    <section id="era-1" class="era snap theme-craft" aria-labelledby="era-1-title">
+      <div class="container era__inner">
+        <h2 id="era-1-title">1) Pre-Industrial Craftsmanship</h2>
+        <p><strong>Era:</strong> Before mass production</p>
+        <ul>
+          <li>Single artisan builds & inspects the whole product.</li>
+          <li>Quality = reputation; no formal process or roles.</li>
         </ul>
+        <p class="then-now"><span>Then:</span> Mastery & pride. <span>Now:</span> Teams & standards.</p>
       </div>
-      <figure class="pyramid" aria-label="Test pyramid visual">
-        <div class="row e2e">E2E (few, slow, high confidence)</div>
-        <div class="row integration">Integration (some, medium)</div>
-        <div class="row unit">Unit (many, fast)</div>
-      </figure>
     </section>
 
-    <section id="bugs" class="card" aria-labelledby="bugs-title">
-      <h2 id="bugs-title">Bug Lifecycle</h2>
-      <ol class="steps" aria-label="Bug lifecycle steps">
-        <li><span>New</span></li>
-        <li><span>Triaged</span></li>
-        <li><span>In-Progress</span></li>
-        <li><span>Fixed</span></li>
-        <li><span>Verified</span></li>
-        <li><span>Closed</span></li>
-      </ol>
-      <p class="muted">Tip: Separate <em>severity</em> (impact) from <em>priority</em> (when to fix).</p>
+    <section id="era-2" class="era snap theme-factory" aria-labelledby="era-2-title">
+      <div class="container era__inner">
+        <h2 id="era-2-title">2) Industrial Revolution</h2>
+        <p><strong>Era:</strong> Late 1800s–Early 1900s</p>
+        <ul>
+          <li>Production separates workers and inspectors.</li>
+          <li><em>Scientific Management</em> (Taylor): procedures & measurement.</li>
+        </ul>
+        <p class="then-now"><span>Shift:</span> From craft to inspection roles.</p>
+      </div>
     </section>
 
-    <section id="checklist" class="card" aria-labelledby="checklist-title">
-      <h2 id="checklist-title">Pre-Release Checklist</h2>
-      <ul class="checklist">
-        <li><input id="c1" type="checkbox"><label for="c1">Critical flows pass (login, purchase, save)</label></li>
-        <li><input id="c2" type="checkbox"><label for="c2">No blocking accessibility issues (WCAG basics)</label></li>
-        <li><input id="c3" type="checkbox"><label for="c3">No regressions in top 3 metrics</label></li>
-        <li><input id="c4" type="checkbox"><label for="c4">UI matches design within tolerance (spacing, color, copy)</label></li>
-        <li><input id="c5" type="checkbox"><label for="c5">Known issues documented with severity/priority</label></li>
-      </ul>
+    <section id="era-3" class="era snap theme-spc" aria-labelledby="era-3-title">
+      <div class="container era__inner">
+        <h2 id="era-3-title">3) Statistical Quality Control</h2>
+        <p><strong>Era:</strong> 1920s–1940s</p>
+        <ul>
+          <li>Shewhart introduces SPC: control charts, sampling.</li>
+          <li>WWII: reliability at volume drives method adoption.</li>
+        </ul>
+        <p class="then-now"><span>Shift:</span> Detecting variation early, not only at the end.</p>
+      </div>
     </section>
 
-    <section id="demo" class="card" aria-labelledby="demo-title">
-      <h2 id="demo-title">Micro-Demo: Test Case & Result</h2>
-      <div class="demo-grid">
-        <article class="testcase" aria-labelledby="tc-title">
-          <h3 id="tc-title">TC-017: Add item to cart updates badge</h3>
-          <p><strong>Steps:</strong> Open product → Click “Add to cart” → Observe cart badge increments.</p>
-          <p><strong>Expected:</strong> Badge increments by 1 with smooth, accessible announcement.</p>
-          <div class="meta">
-            <span class="badge high" data-priority>Priority: High</span>
-            <span class="badge owner">Assignee: QA-A</span>
-          </div>
-        </article>
+    <section id="era-4" class="era snap theme-tqm" aria-labelledby="era-4-title">
+      <div class="container era__inner">
+        <h2 id="era-4-title">4) Total Quality & Standards</h2>
+        <p><strong>Era:</strong> 1950s–1970s</p>
+        <ul>
+          <li>Deming & Juran: quality is everyone’s job.</li>
+          <li>Kaizen, quality circles, ISO standards.</li>
+        </ul>
+        <p class="then-now"><span>Shift:</span> From inspection to continuous improvement.</p>
+      </div>
+    </section>
 
-        <div class="controls">
-          <button class="btn" id="toggleResult" aria-pressed="false">Mark Pass/Fail</button>
-          <button class="btn ghost" id="cyclePriority">Cycle Priority (H/M/L)</button>
-          <div class="result" role="status" aria-live="polite" id="resultReadout">Result: Not run</div>
-        </div>
+    <section id="era-5" class="era snap theme-softqa" aria-labelledby="era-5-title">
+      <div class="container era__inner">
+        <h2 id="era-5-title">5) Software Quality Emerges</h2>
+        <p><strong>Era:</strong> 1970s–1980s</p>
+        <ul>
+          <li>Borrowing from manufacturing; tests after coding.</li>
+          <li>Early IEEE standards for software quality.</li>
+        </ul>
+        <p class="then-now"><span>Pain:</span> Late defect discovery = costly fixes.</p>
+      </div>
+    </section>
+
+    <section id="era-6" class="era snap theme-shiftleft" aria-labelledby="era-6-title">
+      <div class="container era__inner">
+        <h2 id="era-6-title">6) Shift Left & Process Models</h2>
+        <p><strong>Era:</strong> 1990s–2000s</p>
+        <ul>
+          <li>From Waterfall to Spiral/RUP; earlier QA involvement.</li>
+          <li>Code reviews, requirements checks, test management tools.</li>
+        </ul>
+        <p class="then-now"><span>Shift:</span> Prevention over detection.</p>
+      </div>
+    </section>
+
+    <section id="era-7" class="era snap theme-agile" aria-labelledby="era-7-title">
+      <div class="container era__inner">
+        <h2 id="era-7-title">7) Agile, CI/CD, Test Automation</h2>
+        <p><strong>Era:</strong> 2001–2010s</p>
+        <ul>
+          <li>QA integrated into sprints; “Quality Engineering.”</li>
+          <li>CI/CD pipelines; fast regressions; higher coverage automation.</li>
+        </ul>
+        <p class="then-now"><span>Shift:</span> Continuous quality, not stage gates only.</p>
+      </div>
+    </section>
+
+    <section id="era-8" class="era snap theme-modern" aria-labelledby="era-8-title">
+      <div class="container era__inner">
+        <h2 id="era-8-title">8) Modern Era: Shift-Left + Shift-Right</h2>
+        <p><strong>Era:</strong> 2010s–Now</p>
+        <ul>
+          <li>Design-phase QA, observability in prod, feature flags.</li>
+          <li>Visual regression, Playwright/Cypress, AI-assisted testing.</li>
+          <li>UX, accessibility, performance as first-class quality.</li>
+        </ul>
+        <p class="then-now"><span>Next:</span> Quality as a product competency, owned by the org.</p>
+      </div>
+    </section>
+
+    <section id="era-end" class="era outro snap" aria-labelledby="era-end-title">
+      <div class="container era__inner">
+        <h2 id="era-end-title">Where Your Team Fits</h2>
+        <p>Pick practices that maximize your learning speed and reduce risk. QA is not a phase — it’s how you build.</p>
+        <a class="btn" href="#era-1">Back to start</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container foot">
-      <p>© <span id="year"></span> QTM Demo — Built for a QA overview & micro-interaction.</p>
-      <a href="#hero-title">Back to top</a>
+      <p>© <span id="year"></span> QA Timeline Demo</p>
     </div>
   </footer>
 
