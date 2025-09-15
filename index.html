@@ -1,163 +1,449 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>History of QA — Scroll Timeline</title>
-  <meta name="description" content="A single-page, scroll-snapping history of Quality Assurance from craftsmanship to AI-assisted testing." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>History of QA — Scroll Timeline</title>
+    <meta
+      name="description"
+      content="A single-page, scroll-snapping history of Quality Assurance from craftsmanship to AI-assisted testing."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Sticky Header -->
-  <header class="site-header" role="banner">
-    <div class="container head">
-      <h1 class="brand">History of QA</h1>
+    <!-- Sticky Header -->
+    <header class="site-header" role="banner">
+      <div class="container head">
+        <h1 class="brand">History of QA</h1>
 
-      <!-- Progress bar -->
-      <div class="progress" aria-hidden="true">
-        <div class="progress__bar" id="progressBar"></div>
+        <!-- Progress bar -->
+        <div class="progress" aria-hidden="true">
+          <div class="progress__bar" id="progressBar"></div>
+        </div>
+
+        <!-- Sticky Nav -->
+        <nav aria-label="Timeline navigation">
+          <ul class="nav" id="scrollspy">
+            <li><a href="#era-1">Craftsmanship</a></li>
+            <li><a href="#era-2">Industrial Rev.</a></li>
+            <li><a href="#era-3">Statistical QC</a></li>
+            <li><a href="#era-4">Total Quality</a></li>
+            <li><a href="#era-5">Software QA</a></li>
+            <li><a href="#era-6">Shift Left</a></li>
+            <li><a href="#era-7">Agile & CD</a></li>
+            <li><a href="#era-8">Modern Era</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <!-- Sticky Nav -->
-      <nav aria-label="Timeline navigation">
-        <ul class="nav" id="scrollspy">
-          <li><a href="#era-1">Craftsmanship</a></li>
-          <li><a href="#era-2">Industrial Rev.</a></li>
-          <li><a href="#era-3">Statistical QC</a></li>
-          <li><a href="#era-4">Total Quality</a></li>
-          <li><a href="#era-5">Software QA</a></li>
-          <li><a href="#era-6">Shift Left</a></li>
-          <li><a href="#era-7">Agile & CD</a></li>
-          <li><a href="#era-8">Modern Era</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main id="main" class="snap-container" role="main" tabindex="-1">
+      <!-- Each era is a full-viewport snap section -->
+      <section id="era-hero" class="era hero snap" aria-labelledby="hero-title">
+        <div class="container era__inner">
+          <h2 id="hero-title">Quality as a Journey</h2>
+          <p class="lede">
+            From artisan workshops to AI-assisted testing, QA has evolved from
+            end-of-line checks to a culture of continuous quality.
+          </p>
+          <p class="hint" aria-hidden="true">Scroll ↓</p>
+        </div>
+      </section>
 
-  <main id="main" class="snap-container" role="main" tabindex="-1">
-    <!-- Each era is a full-viewport snap section -->
-    <section id="era-hero" class="era hero snap" aria-labelledby="hero-title">
-      <div class="container era__inner">
-        <h2 id="hero-title">Quality as a Journey</h2>
-        <p class="lede">From artisan workshops to AI-assisted testing, QA has evolved from end-of-line checks to a culture of continuous quality.</p>
-        <p class="hint" aria-hidden="true">Scroll ↓</p>
+      <section
+        id="era-1"
+        class="era snap theme-craft"
+        aria-labelledby="era-1-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-1-title">1) Pre-Industrial Craftsmanship</h2>
+          <p><strong>Era:</strong> Before mass production</p>
+          <ul>
+            <li>
+              Individual artisans built products end-to-end and inspected as
+              they worked.
+            </li>
+            <li>
+              Quality hinged on skill, reputation, and apprenticeship—no formal
+              standards.
+            </li>
+            <li>
+              Defects were corrected immediately by the same person who created
+              them.
+            </li>
+          </ul>
+          <p class="insight">
+            Quality lived inside the craft itself. With end-to-end ownership,
+            there was little separation between making and verifying.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>One maker, one process</li>
+                <li>Implicit standards</li>
+                <li>Reputation = quality signal</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Specialized roles & handoffs</li>
+                <li>Documented standards</li>
+                <li>Metrics & traceability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-2"
+        class="era snap theme-factory"
+        aria-labelledby="era-2-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-2-title">2) Industrial Revolution</h2>
+          <p><strong>Era:</strong> Late 1800s–Early 1900s</p>
+          <ul>
+            <li>
+              Mass production split labor; dedicated inspectors checked finished
+              goods.
+            </li>
+            <li>
+              Scientific Management (Taylor): procedures, time studies, standard
+              work.
+            </li>
+            <li>Defects surfaced late → scrap, rework, and waste.</li>
+          </ul>
+          <p class="insight">
+            Scale improved output, but inspection was mostly end-of-line with
+            weak feedback loops back into production.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Post-production inspection</li>
+                <li>Throughput over learning</li>
+                <li>Quality team as gate</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>In-process checks</li>
+                <li>Continuous feedback</li>
+                <li>Quality as a shared duty</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-3"
+        class="era snap theme-spc"
+        aria-labelledby="era-3-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-3-title">3) Statistical Quality Control</h2>
+          <p><strong>Era:</strong> 1920s–1940s</p>
+          <ul>
+            <li>
+              Shewhart pioneers SPC: control charts, sampling plans, capability
+              indices.
+            </li>
+            <li>
+              WWII demands push reliability at scale; data informs
+              interventions.
+            </li>
+            <li>
+              Shift from 100% inspection to sampling and early variation
+              detection.
+            </li>
+          </ul>
+          <p class="insight">
+            For the first time, <em>data</em> rather than intuition drove
+            process control and decision making about quality.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Judgment calls</li>
+                <li>All-or-nothing checks</li>
+                <li>Late defect discovery</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Control charts & alerts</li>
+                <li>Sampling strategies</li>
+                <li>Preventive adjustments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-4"
+        class="era snap theme-tqm"
+        aria-labelledby="era-4-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-4-title">4) Total Quality & Standards</h2>
+          <p><strong>Era:</strong> 1950s–1970s</p>
+          <ul>
+            <li>
+              Deming & Juran: quality is everyone’s responsibility; management
+              systems matter.
+            </li>
+            <li>Kaizen & quality circles: team-led, continuous improvement.</li>
+            <li>ISO and industry standards codify expectations and audits.</li>
+          </ul>
+          <p class="insight">
+            Quality moved from inspection to improvement culture—process,
+            people, and standards aligned to reduce defects upstream.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Departmental QA</li>
+                <li>Reactive fixes</li>
+                <li>Ad-hoc practices</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Org-wide ownership</li>
+                <li>Continuous improvement</li>
+                <li>Certified processes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-5"
+        class="era snap theme-softqa"
+        aria-labelledby="era-5-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-5-title">5) Software Quality Emerges</h2>
+          <p><strong>Era:</strong> 1970s–1980s</p>
+          <ul>
+            <li>
+              Software adopts QC ideas; testing mostly after coding (“test at
+              the end”).
+            </li>
+            <li>
+              IEEE/DoD begin publishing software quality standards and guidance.
+            </li>
+            <li>
+              Documentation, code reviews, and acceptance test plans formalize
+              practice.
+            </li>
+          </ul>
+          <p class="insight">
+            Late testing caught show-stoppers but was costly; organizations
+            recognized the need to plan for quality—not just test for it.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Big-bang testing</li>
+                <li>Manual heavy</li>
+                <li>Late requirements checks</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Planned test strategy</li>
+                <li>Reviews & static analysis</li>
+                <li>Defect prevention mindset</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-6"
+        class="era snap theme-shiftleft"
+        aria-labelledby="era-6-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-6-title">6) Shift Left & Process Models</h2>
+          <p><strong>Era:</strong> 1990s–2000s</p>
+          <ul>
+            <li>
+              From Waterfall to Spiral/RUP; QA begins at requirements and
+              design.
+            </li>
+            <li>
+              Risk-based testing, test management tools, formal inspections.
+            </li>
+            <li>Automation starts growing but manual remains significant.</li>
+          </ul>
+          <p class="insight">
+            Moving quality activities earlier slashed the cost of fixes and
+            raised clarity on requirements and risks.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>QA after dev</li>
+                <li>Late risk discovery</li>
+                <li>Tooling siloed</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>QA from the start</li>
+                <li>Risk-based planning</li>
+                <li>Integrated test management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-7"
+        class="era snap theme-agile"
+        aria-labelledby="era-7-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-7-title">7) Agile, CI/CD, Test Automation</h2>
+          <p><strong>Era:</strong> 2001–2010s</p>
+          <ul>
+            <li>
+              Agile teams embed QA in sprints; “Quality Engineering” emerges.
+            </li>
+            <li>
+              CI/CD pipelines automate builds, tests, and fast regressions.
+            </li>
+            <li>
+              Unit/integration/E2E frameworks mature (xUnit, Selenium, etc.).
+            </li>
+          </ul>
+          <p class="insight">
+            Quality becomes continuous: smaller batches, tighter feedback loops,
+            and broad automation coverage.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Stage-gate releases</li>
+                <li>Manual regression suites</li>
+                <li>Slow feedback</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Trunk-based / CI</li>
+                <li>Automated regression</li>
+                <li>Minutes-level feedback</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-8"
+        class="era snap theme-modern"
+        aria-labelledby="era-8-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-8-title">8) Modern Era: Shift-Left + Shift-Right</h2>
+          <p><strong>Era:</strong> 2010s–Now</p>
+          <ul>
+            <li>
+              Design-phase QA (accessibility/usability); reviews before code
+              exists.
+            </li>
+            <li>
+              Shift-right: observability, synthetic checks, feature flags in
+              prod.
+            </li>
+            <li>
+              Visual regression, Playwright/Cypress, AI-assisted test
+              generation.
+            </li>
+            <li>
+              Quality spans UX, performance, security, privacy, data integrity.
+            </li>
+          </ul>
+          <p class="insight">
+            Modern QA is a product competency: prevent issues early, detect
+            issues late, and learn continuously from real usage.
+          </p>
+
+          <div class="then-now-grid">
+            <div class="tn-card">
+              <h3>Then</h3>
+              <ul>
+                <li>Pre-release only</li>
+                <li>Lab-only data</li>
+                <li>Visual checks by eye</li>
+              </ul>
+            </div>
+            <div class="tn-card">
+              <h3>Now</h3>
+              <ul>
+                <li>Design reviews + prod checks</li>
+                <li>RUM & observability</li>
+                <li>Automated visual diffs & AI assist</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="era-end"
+        class="era outro snap"
+        aria-labelledby="era-end-title"
+      >
+        <div class="container era__inner">
+          <h2 id="era-end-title">Where Your Team Fits</h2>
+          <p>
+            Pick practices that maximize your learning speed and reduce risk. QA
+            is not a phase — it’s how you build.
+          </p>
+          <a class="btn" href="#era-1">Back to start</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container foot">
+        <p>© <span id="year"></span> QA Timeline Demo</p>
       </div>
-    </section>
+    </footer>
 
-    <section id="era-1" class="era snap theme-craft" aria-labelledby="era-1-title">
-      <div class="container era__inner">
-        <h2 id="era-1-title">1) Pre-Industrial Craftsmanship</h2>
-        <p><strong>Era:</strong> Before mass production</p>
-        <ul>
-          <li>Single artisan builds & inspects the whole product.</li>
-          <li>Quality = reputation; no formal process or roles.</li>
-        </ul>
-        <p class="then-now"><span>Then:</span> Mastery & pride. <span>Now:</span> Teams & standards.</p>
-      </div>
-    </section>
-
-    <section id="era-2" class="era snap theme-factory" aria-labelledby="era-2-title">
-      <div class="container era__inner">
-        <h2 id="era-2-title">2) Industrial Revolution</h2>
-        <p><strong>Era:</strong> Late 1800s–Early 1900s</p>
-        <ul>
-          <li>Production separates workers and inspectors.</li>
-          <li><em>Scientific Management</em> (Taylor): procedures & measurement.</li>
-        </ul>
-        <p class="then-now"><span>Shift:</span> From craft to inspection roles.</p>
-      </div>
-    </section>
-
-    <section id="era-3" class="era snap theme-spc" aria-labelledby="era-3-title">
-      <div class="container era__inner">
-        <h2 id="era-3-title">3) Statistical Quality Control</h2>
-        <p><strong>Era:</strong> 1920s–1940s</p>
-        <ul>
-          <li>Shewhart introduces SPC: control charts, sampling.</li>
-          <li>WWII: reliability at volume drives method adoption.</li>
-        </ul>
-        <p class="then-now"><span>Shift:</span> Detecting variation early, not only at the end.</p>
-      </div>
-    </section>
-
-    <section id="era-4" class="era snap theme-tqm" aria-labelledby="era-4-title">
-      <div class="container era__inner">
-        <h2 id="era-4-title">4) Total Quality & Standards</h2>
-        <p><strong>Era:</strong> 1950s–1970s</p>
-        <ul>
-          <li>Deming & Juran: quality is everyone’s job.</li>
-          <li>Kaizen, quality circles, ISO standards.</li>
-        </ul>
-        <p class="then-now"><span>Shift:</span> From inspection to continuous improvement.</p>
-      </div>
-    </section>
-
-    <section id="era-5" class="era snap theme-softqa" aria-labelledby="era-5-title">
-      <div class="container era__inner">
-        <h2 id="era-5-title">5) Software Quality Emerges</h2>
-        <p><strong>Era:</strong> 1970s–1980s</p>
-        <ul>
-          <li>Borrowing from manufacturing; tests after coding.</li>
-          <li>Early IEEE standards for software quality.</li>
-        </ul>
-        <p class="then-now"><span>Pain:</span> Late defect discovery = costly fixes.</p>
-      </div>
-    </section>
-
-    <section id="era-6" class="era snap theme-shiftleft" aria-labelledby="era-6-title">
-      <div class="container era__inner">
-        <h2 id="era-6-title">6) Shift Left & Process Models</h2>
-        <p><strong>Era:</strong> 1990s–2000s</p>
-        <ul>
-          <li>From Waterfall to Spiral/RUP; earlier QA involvement.</li>
-          <li>Code reviews, requirements checks, test management tools.</li>
-        </ul>
-        <p class="then-now"><span>Shift:</span> Prevention over detection.</p>
-      </div>
-    </section>
-
-    <section id="era-7" class="era snap theme-agile" aria-labelledby="era-7-title">
-      <div class="container era__inner">
-        <h2 id="era-7-title">7) Agile, CI/CD, Test Automation</h2>
-        <p><strong>Era:</strong> 2001–2010s</p>
-        <ul>
-          <li>QA integrated into sprints; “Quality Engineering.”</li>
-          <li>CI/CD pipelines; fast regressions; higher coverage automation.</li>
-        </ul>
-        <p class="then-now"><span>Shift:</span> Continuous quality, not stage gates only.</p>
-      </div>
-    </section>
-
-    <section id="era-8" class="era snap theme-modern" aria-labelledby="era-8-title">
-      <div class="container era__inner">
-        <h2 id="era-8-title">8) Modern Era: Shift-Left + Shift-Right</h2>
-        <p><strong>Era:</strong> 2010s–Now</p>
-        <ul>
-          <li>Design-phase QA, observability in prod, feature flags.</li>
-          <li>Visual regression, Playwright/Cypress, AI-assisted testing.</li>
-          <li>UX, accessibility, performance as first-class quality.</li>
-        </ul>
-        <p class="then-now"><span>Next:</span> Quality as a product competency, owned by the org.</p>
-      </div>
-    </section>
-
-    <section id="era-end" class="era outro snap" aria-labelledby="era-end-title">
-      <div class="container era__inner">
-        <h2 id="era-end-title">Where Your Team Fits</h2>
-        <p>Pick practices that maximize your learning speed and reduce risk. QA is not a phase — it’s how you build.</p>
-        <a class="btn" href="#era-1">Back to start</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container foot">
-      <p>© <span id="year"></span> QA Timeline Demo</p>
-    </div>
-  </footer>
-
-  <script src="script.js" defer></script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
