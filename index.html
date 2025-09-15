@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QTM — QA Demo</title>
+  <meta name="description" content="A tiny, clean demo page explaining core QA concepts with a micro interactive widget." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <nav aria-label="Primary" class="container nav">
+      <a class="brand" href="#">QTM</a>
+      <ul class="nav-list">
+        <li><a href="#qa">QA 101</a></li>
+        <li><a href="#pyramid">Test Pyramid</a></li>
+        <li><a href="#bugs">Bug Lifecycle</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#demo">Demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Quality Assurance, Simplified</h1>
+      <p class="lede">
+        QA reduces risk and accelerates delivery by catching issues early, often, and objectively.
+        This micro-site shows core concepts your team should align on.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#demo">Try the micro-demo</a>
+        <a class="btn ghost" href="#checklist">Ship-ready checklist</a>
+      </div>
+    </section>
+
+    <section id="qa" class="card" aria-labelledby="qa-title">
+      <h2 id="qa-title">What is QA?</h2>
+      <p>
+        QA is a systematic process for preventing defects and verifying that software meets user needs.
+        It blends prevention (process, standards) and detection (testing, reviews).
+      </p>
+      <ul class="pill-list" aria-label="QA focus areas">
+        <li class="pill">Functional</li>
+        <li class="pill">UI/UX</li>
+        <li class="pill">Accessibility</li>
+        <li class="pill">Performance</li>
+        <li class="pill">Security (basic)</li>
+      </ul>
+    </section>
+
+    <section id="pyramid" class="grid card" aria-labelledby="pyramid-title">
+      <div>
+        <h2 id="pyramid-title">The Test Pyramid</h2>
+        <p>Balance speed and confidence by emphasizing fast, focused tests at the base.</p>
+        <ul class="list">
+          <li><strong>Unit:</strong> Fast, isolated, verify functions/components.</li>
+          <li><strong>Integration:</strong> Interactions between modules/services.</li>
+          <li><strong>E2E:</strong> User-level flows across the system.</li>
+        </ul>
+      </div>
+      <figure class="pyramid" aria-label="Test pyramid visual">
+        <div class="row e2e">E2E (few, slow, high confidence)</div>
+        <div class="row integration">Integration (some, medium)</div>
+        <div class="row unit">Unit (many, fast)</div>
+      </figure>
+    </section>
+
+    <section id="bugs" class="card" aria-labelledby="bugs-title">
+      <h2 id="bugs-title">Bug Lifecycle</h2>
+      <ol class="steps" aria-label="Bug lifecycle steps">
+        <li><span>New</span></li>
+        <li><span>Triaged</span></li>
+        <li><span>In-Progress</span></li>
+        <li><span>Fixed</span></li>
+        <li><span>Verified</span></li>
+        <li><span>Closed</span></li>
+      </ol>
+      <p class="muted">Tip: Separate <em>severity</em> (impact) from <em>priority</em> (when to fix).</p>
+    </section>
+
+    <section id="checklist" class="card" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">Pre-Release Checklist</h2>
+      <ul class="checklist">
+        <li><input id="c1" type="checkbox"><label for="c1">Critical flows pass (login, purchase, save)</label></li>
+        <li><input id="c2" type="checkbox"><label for="c2">No blocking accessibility issues (WCAG basics)</label></li>
+        <li><input id="c3" type="checkbox"><label for="c3">No regressions in top 3 metrics</label></li>
+        <li><input id="c4" type="checkbox"><label for="c4">UI matches design within tolerance (spacing, color, copy)</label></li>
+        <li><input id="c5" type="checkbox"><label for="c5">Known issues documented with severity/priority</label></li>
+      </ul>
+    </section>
+
+    <section id="demo" class="card" aria-labelledby="demo-title">
+      <h2 id="demo-title">Micro-Demo: Test Case & Result</h2>
+      <div class="demo-grid">
+        <article class="testcase" aria-labelledby="tc-title">
+          <h3 id="tc-title">TC-017: Add item to cart updates badge</h3>
+          <p><strong>Steps:</strong> Open product → Click “Add to cart” → Observe cart badge increments.</p>
+          <p><strong>Expected:</strong> Badge increments by 1 with smooth, accessible announcement.</p>
+          <div class="meta">
+            <span class="badge high" data-priority>Priority: High</span>
+            <span class="badge owner">Assignee: QA-A</span>
+          </div>
+        </article>
+
+        <div class="controls">
+          <button class="btn" id="toggleResult" aria-pressed="false">Mark Pass/Fail</button>
+          <button class="btn ghost" id="cyclePriority">Cycle Priority (H/M/L)</button>
+          <div class="result" role="status" aria-live="polite" id="resultReadout">Result: Not run</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container foot">
+      <p>© <span id="year"></span> QTM Demo — Built for a QA overview & micro-interaction.</p>
+      <a href="#hero-title">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
